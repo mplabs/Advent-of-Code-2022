@@ -1,0 +1,16 @@
+{
+  "name": "adventofcode-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write src/**/*.{js,tsx?}",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Felix Dürrwald <mplabs@mplabs.de> (https://github.com/mplabs)",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1"
+  }
+}
