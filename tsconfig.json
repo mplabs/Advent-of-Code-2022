@@ -1,3 +1,15 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json"
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "NodeNext",
+    "baseUrl": "./src",
+    "paths": {
+      "@utils/*": ["utils/*"]
+    },
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+  }
 }
