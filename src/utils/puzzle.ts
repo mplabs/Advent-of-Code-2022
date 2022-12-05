@@ -24,4 +24,5 @@ export abstract class AbstractPuzzle {
   }
 
   public abstract solveFirst(): string | number
+  public abstract solveSecond(): string | number
 }
