@@ -3,6 +3,9 @@ export const chunk = <T>(arr: T[], size: number) =>
     arr.slice(i * size, i * size + size)
   )
 
+export const distinct = <T>(value: T, index: number, self: T[]) =>
+  self.indexOf(value) === index
+
 export const intersection = <T>(arrays: T[][]): T[] =>
   arrays.reduce((a, b) => a.filter(c => b.includes(c)))
 
