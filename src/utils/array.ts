@@ -9,7 +9,7 @@ export const distinct = <T>(value: T, index: number, self: T[]) =>
 export const intersection = <T>(arrays: T[][]): T[] =>
   arrays.reduce((a, b) => a.filter(c => b.includes(c)))
 
-export function invertMatrix(matrix: any[][]): any[][] {
+export function invertMatrix<T>(matrix: any[][]): T[][] {
   return matrix.reduce((acc, cv) => {
     cv.reduce((_, cv2, idx2) => {
       if (acc[idx2] == undefined) {
