@@ -7,24 +7,38 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "runtimeExecutable": "/Users/mplabs/.nvm/versions/node/v18.7.0/bin/node",
+      "name": "Build Project",
       "program": "${file}",
-      "args": [
-        "1"
-      ],
-      "runtimeArgs": [
-        "--nolazy",
-        "-r",
-        "ts-node/register",
-        "-r",
-        "tsconfig-paths/register"
-      ],
+      "preLaunchTask": "npm: build",
       "sourceMaps": true,
-      "cwd": "${workspaceFolder}",
-    }
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": [
+          "${workspaceFolder}/dist/**/*.js"
+      ]
+  }
+
+    // {
+    //   "type": "node",
+    //   "request": "launch",
+    //   "name": "Launch Program",
+    //   "skipFiles": [
+    //     "<node_internals>/**"
+    //   ],
+    //   "runtimeExecutable": "/Users/mplabs/.volta/bin/node",
+    //   "program": "${file}",
+    //   "args": [
+    //     "7"
+    //   ],
+    //   "runtimeArgs": [
+    //     "--nolazy",
+    //     "-r",
+    //     "ts-node/register",
+    //     "-r",
+    //     "tsconfig-paths/register"
+    //   ],
+    //   "sourceMaps": true,
+    //   "cwd": "${workspaceFolder}",
+    // }
   ]
 }
