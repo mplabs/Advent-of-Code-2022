@@ -65,35 +65,32 @@ export default class Day9 extends AbstractPuzzle {
   }
 
   solveSecond(): number {
-    // const monkeys: Monkey[] = this.input.split('\n\n').map(this.mapMonkey)
+    const monkeys: Monkey[] = this.input.split('\n\n').map(this.mapMonkey)
 
-    // const ROUNDS = 20
+    const ROUNDS = 10000
 
-    // for (let round = 0; round < ROUNDS; round++) {
-    //   monkeys.forEach((monkey, idx) => {
-    //     monkey.items
-    //       .map((item) => monkey.operation(item))
-    //       .forEach((item) => {
-    //         console.log(item)
-    //         monkeys[idx].count++
-    //         if (Number.isInteger(item / monkey.divisor)) {
-    //           monkeys[monkey.true].items.push(item)
-    //         } else {
-    //           monkeys[monkey.false].items.push(item)
-    //         }
-    //       })
-    //     monkeys[idx].items = []
-    //   })
-    // }
+    for (let round = 0; round < ROUNDS; round++) {
+      monkeys.forEach((monkey, idx) => {
+        monkey.items
+          .map((item) => monkey.operation(item))
+          .map(item => item % monkeys.reduce((acc, { divisor }) => acc * divisor, 1))
+          .forEach((item) => {
+            monkeys[idx].count++
 
-    // console.log(monkeys.map(({ count }) => count))
+            if (item % monkey.divisor === 0) {
+              monkeys[monkey.true].items.push(item)
+            } else {
+              monkeys[monkey.false].items.push(item)
+            }
+          })
+        monkeys[idx].items = []
+      })
+    }
 
-    // return monkeys
-    //   .map(({ count }) => count)
-    //   .sort((a, b) => a - b)
-    //   .slice(-2)
-    //   .reduce((acc, cur) => acc * cur, 1)
-
-    return 0
+    return monkeys
+      .map(({ count }) => count)
+      .sort((a, b) => a - b)
+      .slice(-2)
+      .reduce((acc, cur) => acc * cur, 1)
   }
 }
