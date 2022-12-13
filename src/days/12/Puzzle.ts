@@ -1,9 +1,9 @@
 import { Graph } from '@utils/graph'
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
 type Coords = [number, number]
 
-export default class Day12 extends AbstractPuzzle {
+export default class Day12 extends Puzzle {
   COLUMNS: number
   chars: string
   graph: Graph = new Graph()

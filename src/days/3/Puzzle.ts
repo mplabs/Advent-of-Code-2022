@@ -1,7 +1,7 @@
 import { chunk, intersection } from '@utils/array'
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
-export default class Day3 extends AbstractPuzzle {
+export default class Day3 extends Puzzle {
   /**
    * Convert an item to its priority
    *  - Lowercase item types a through z have priorities 1 through 26.

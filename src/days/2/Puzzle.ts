@@ -1,6 +1,6 @@
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
-export default class Day2 extends AbstractPuzzle {
+export default class Day2 extends Puzzle {
   private solve(matrix: number[][]): number {
     return this.input
       .split('\n')

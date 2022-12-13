@@ -1,9 +1,9 @@
 import { chunk, invertMatrix } from '@utils/array'
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
 const RULE_REGEX = /^move (?<count>\d+) from (?<from>\d+) to (?<to>\d+)$/
 
-export default class Day5 extends AbstractPuzzle {
+export default class Day5 extends Puzzle {
   private state: string[][] = []
 
   get rules(): string[] {

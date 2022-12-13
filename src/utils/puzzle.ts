@@ -8,19 +8,22 @@ export async function getPuzzle(puzzleName: string) {
   })
 
   const { default: puzzleClass } = await import(`../days/${puzzleName}/Puzzle`)
-  const puzzle = new puzzleClass()
-  puzzle.input = input
+  const puzzle = new puzzleClass(input)
 
   return puzzle
 }
 
-export abstract class AbstractPuzzle {
+export abstract class Puzzle {
   protected _input: string = ''
   set input(input: string) {
     this._input = input
   }
   get input(): string {
     return this._input
+  }
+
+  constructor(input: string) {
+    this.input = input
   }
 
   public abstract solveFirst(): string | number

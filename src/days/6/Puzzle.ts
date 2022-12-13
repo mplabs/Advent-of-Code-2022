@@ -1,7 +1,7 @@
 import { distinct } from '@utils/array'
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
-export default class Day6 extends AbstractPuzzle {
+export default class Day6 extends Puzzle {
   solveFirst(): number {
     for (let i = 4; i < this.input.length; i++) {
       const window = Array.from(this.input.substring(i - 4, i))

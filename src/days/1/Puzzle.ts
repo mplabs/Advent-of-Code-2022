@@ -1,6 +1,6 @@
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
-export default class Day1 extends AbstractPuzzle {
+export default class Day1 extends Puzzle {
   private aggregate(): number[] {
     const puzzleInput = this.input.split('\n')
     const aggregate: number[] = [0]

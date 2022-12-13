@@ -1,6 +1,6 @@
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
-export default class Day8 extends AbstractPuzzle {
+export default class Day8 extends Puzzle {
   private _getAdjacent(
     trees: number[][],
     row: number,

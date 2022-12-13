@@ -1,4 +1,4 @@
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 import { join } from 'path'
 
 type Directories = Directory[]
@@ -9,7 +9,7 @@ interface Directory {
   parent?: string
 }
 
-export default class Day7 extends AbstractPuzzle {
+export default class Day7 extends Puzzle {
   private _entries?: Directories
   get entries(): Directories {
     // Only do this once

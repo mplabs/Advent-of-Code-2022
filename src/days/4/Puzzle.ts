@@ -1,6 +1,6 @@
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
-export default class Day4 extends AbstractPuzzle {
+export default class Day4 extends Puzzle {
   get ranges(): number[][] {
     return this.input
       .split('\n') // lines

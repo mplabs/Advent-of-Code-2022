@@ -1,4 +1,4 @@
-import { AbstractPuzzle } from '@utils/puzzle'
+import { Puzzle } from '@utils/puzzle'
 
 interface Monkey {
   items: number[]
@@ -9,7 +9,7 @@ interface Monkey {
   count: number
 }
 
-export default class Day9 extends AbstractPuzzle {
+export default class Day9 extends Puzzle {
   private mapMonkey(definition: string): Monkey {
     return {
       items: definition
