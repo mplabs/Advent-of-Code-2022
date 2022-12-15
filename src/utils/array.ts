@@ -39,3 +39,8 @@ export function times<TResult>(
 ): TResult[] {
   return Array.from({ length: n }, iteratee)
 }
+
+export const zip = <T>(arr: T[], ...args: T[][]): Array<Array<T>> =>
+  arr.map((value, idx) => [value, ...args.map(arr => arr[idx])])
+
+export const unzip = <T>(...args: T[]): T[][] => zip([...args])
