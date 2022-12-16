@@ -1,3 +1,7 @@
+export function abs(n: number): number {
+  return Math.abs(n)
+}
+
 export function clamp(number: number, boundOne: number, boundTwo?: number): number {
   if (!boundTwo) {
     return Math.max(number, boundOne) === boundOne ? number : boundOne

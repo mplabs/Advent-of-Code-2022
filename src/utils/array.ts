@@ -36,6 +36,18 @@ export function invertMatrix<T>(matrix: any[][]): T[][] {
   }, [])
 }
 
+/**
+ * range generator in the vibe of Python
+ * 
+ * Currently only accending ranges are supported
+ * 
+ * @TODO: Add descending ranges
+ * 
+ * @param {number} start The start of the range.
+ * @param {number} end The end of the range.
+ * @param {number} step step The value to increment or decrement by.
+ * @returns {Generator<number}
+ */
 export function* range(
   start?: number,
   end?: number,
@@ -50,10 +62,10 @@ export function* range(
   }
 
   step = step === undefined ? (start < end ? 1 : -1) : step
+  let x = start - step
 
-  let x = start - step;
-  while(x < end - step) {
-    yield x += step
+  while (x < end - step) {
+    yield (x += step)
   }
 }
 
