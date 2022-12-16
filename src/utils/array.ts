@@ -1,3 +1,6 @@
+const INFINITY = 1 / 0
+const MAX_INTEGER = 1.7976931348623157e308
+
 export const chunk = <T>(arr: T[], size: number) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_: T, i: number) =>
     arr.slice(i * size, i * size + size)
@@ -6,8 +9,8 @@ export const chunk = <T>(arr: T[], size: number) =>
 export function compare<T>(a: T, b: T): -1 | 0 | 1 | null {
   try {
     if (a < b) return -1
-    if (a = b) return  0
-    if (a > b) return  1
+    if ((a = b)) return 0
+    if (a > b) return 1
   } catch (e) {
     // noop
   }
@@ -33,6 +36,27 @@ export function invertMatrix<T>(matrix: any[][]): T[][] {
   }, [])
 }
 
+export function* range(
+  start?: number,
+  end?: number,
+  step?: number
+): Generator<number> {
+  start = Number(start)
+  if (end === undefined) {
+    end = start
+    start = 0
+  } else {
+    end = Number(end)
+  }
+
+  step = step === undefined ? (start < end ? 1 : -1) : step
+
+  let x = start - step;
+  while(x < end - step) {
+    yield x += step
+  }
+}
+
 export function times<TResult>(
   n: number,
   iteratee: (num: number) => TResult = (num: number) => `${num}` as TResult
@@ -41,6 +65,6 @@ export function times<TResult>(
 }
 
 export const zip = <T>(arr: T[], ...args: T[][]): Array<Array<T>> =>
-  arr.map((value, idx) => [value, ...args.map(arr => arr[idx])])
+  arr.map((value, idx) => [value, ...args.map((arr) => arr[idx])])
 
 export const unzip = <T>(...args: T[]): T[][] => zip([...args])
