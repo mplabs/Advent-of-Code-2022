@@ -21,6 +21,8 @@ export function compare<T>(a: T, b: T): -1 | 0 | 1 | null {
 export const distinct = <T>(value: T, index: number, self: T[]) =>
   self.indexOf(value) === index
 
+export const inArray = <T>(arr: T[], search: T): boolean => arr.indexOf(search) !== -1
+
 export const intersection = <T>(arrays: T[][]): T[] =>
   arrays.reduce((a, b) => a.filter((c) => b.includes(c)))
 
